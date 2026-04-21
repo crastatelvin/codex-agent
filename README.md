@@ -61,10 +61,8 @@ Instead of static docs, CODEX generates a live, explorable view of the repositor
 
 <br/>
 
-![CODEX Modules - Top](docs/screenshots/02-modules-top.png)
-![CODEX Modules - Middle](docs/screenshots/02-modules-middle.png)
-![CODEX Modules - Bottom](docs/screenshots/02-modules-bottom.png)
-<p><em>Modules tab split into three crops for readability: repository summary and stats, core module list, and lower module set.</em></p>
+![CODEX Modules](docs/screenshots/02-modules-list.png)
+<p><em>Modules tab showing repository context, stats, file tree, and module cards in a single complete view.</em></p>
 
 <br/>
 

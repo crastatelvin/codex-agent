@@ -1,0 +1,10 @@
+backend/venv/
+backend/.env
+frontend/.env
+frontend/.env.local
+frontend/node_modules/
+frontend/build/
+backend/chroma_db/
+__pycache__/
+*.pyc
+.DS_Store

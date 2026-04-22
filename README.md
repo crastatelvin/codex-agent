@@ -290,12 +290,4 @@ You can deploy backend and frontend independently (e.g. Render + Vercel, or both
 
 ## License
 
-Licensed under **CC BY-NC 4.0** — see [LICENSE](LICENSE).
-
----
-
-<div align="center">
-
-Built with care by **Crasta Telvin** for developer onboarding workflows.
-
-</div>
+This project is licensed under the MIT License. See [LICENSE](./LICENSE).

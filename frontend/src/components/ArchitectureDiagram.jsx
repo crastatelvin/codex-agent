@@ -111,6 +111,9 @@ export default function ArchitectureDiagram({ diagram, title }) {
           <button className="btn" onClick={resetZoom} type="button">
             Reset
           </button>
+          <button className="btn" onClick={downloadSvg} type="button" style={{ marginLeft: ".2rem", background: "var(--primary)", color: "white" }}>
+            Export SVG
+          </button>
         </div>
       </div>
       <div

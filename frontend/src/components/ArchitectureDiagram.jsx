@@ -11,6 +11,19 @@ export default function ArchitectureDiagram({ diagram, title }) {
   const zoomIn = () => setZoom((z) => clampZoom(z + 0.15));
   const zoomOut = () => setZoom((z) => clampZoom(z - 0.15));
   const resetZoom = () => setZoom(1);
+  const downloadSvg = () => {
+    if (!ref.current) return;
+    const svgData = ref.current.innerHTML;
+    const svgBlob = new Blob([svgData], { type: "image/svg+xml;charset=utf-8" });
+    const svgUrl = URL.createObjectURL(svgBlob);
+    const downloadLink = document.createElement("a");
+    downloadLink.href = svgUrl;
+    downloadLink.download = `${(title || "diagram").replace(/\s+/g, "_")}.svg`;
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+  };
+
 
   useEffect(() => {
     setZoom(1);

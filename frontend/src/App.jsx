@@ -15,6 +15,10 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [analysisId, setAnalysisId] = useState("");
   const [error, setError] = useState("");
+  const [history, setHistory] = useState(() => {
+    const saved = localStorage.getItem("codex_history");
+    return saved ? JSON.parse(saved) : [];
+  });
   const currentStep = useWebSocket(analysisId);
 
   const onAnalyze = async (url) => {
@@ -26,6 +30,13 @@ export default function App() {
       const res = await analyzeRepo(url, runId);
       setAnalysisId(res.analysis_id || "");
       setData(res);
+      
+      // Update history
+      setHistory(prev => {
+        const next = [url, ...prev.filter(u => u !== url)].slice(0, 5);
+        localStorage.setItem("codex_history", JSON.stringify(next));
+        return next;
+      });
     } catch (e) {
       setError(e?.response?.data?.error || "Analysis failed.");
     } finally {
@@ -37,7 +48,7 @@ export default function App() {
     <ErrorBoundary>
       <MatrixBackground />
       <ProcessingMatrix visible={loading} currentStep={currentStep} />
-      {data ? <ExplorerPage data={data} onReset={() => setData(null)} /> : <LandingPage onAnalyze={onAnalyze} loading={loading} />}
+      {data ? <ExplorerPage data={data} onReset={() => setData(null)} /> : <LandingPage onAnalyze={onAnalyze} loading={loading} history={history} />}
       {error && <div className="error-toast">{error}</div>}
     </ErrorBoundary>
   );

@@ -90,6 +90,8 @@ Instead of static docs, CODEX generates a live, explorable view of the repositor
 | Module explorer | File/module cards with language and symbol summary |
 | Architecture diagrams | Auto-generated Mermaid module dependency and class diagrams |
 | Diagram controls | Zoom in/out, reset, wheel zoom, and drag-to-pan |
+| Diagram export | Export architecture diagrams as SVG files |
+| Recent history | Persistent history of analyzed repositories for quick access |
 | Function explorer | Searchable cross-file function list with line references |
 | Codebase Q&A | Ask questions and get repo-aware answers from Groq |
 | Matrix-style UI | High-contrast developer-focused explorer theme |
